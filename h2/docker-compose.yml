@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  h2_database:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "${H2_PORT}:${H2_PORT}"
+      - "${H2_CONSOLE_PORT}:${H2_CONSOLE_PORT}"
+    volumes:
+      - h2_data:/var/lib/h2
+    networks:
+      - h2_network
+
+networks:
+  h2_network:
+
+volumes:
+  h2_data:

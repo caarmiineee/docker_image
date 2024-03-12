@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  activemq:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "61616:61616"  # Porta per la connessione TCP
+      - "8161:8161"    # Porta per l'interfaccia Web
